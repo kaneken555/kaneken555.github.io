@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<footer>
+  &copy; {new Date().getFullYear()} {name}. Built with Astro.
+</footer>
+
+<style>
+  footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 13px;
+  }
+</style>
