@@ -38,6 +38,34 @@ const works = [
   },
 ];
 
+const apps = [
+  {
+    name: "Budget Meter",
+    description: "予算の残りをひと目で確認できるアプリ",
+    appStoreUrl: "https://apps.apple.com/jp/app/budget-meter/id6757947139",
+  },
+  {
+    name: "Task Space",
+    description: "次にやるタスクを管理できるアプリ",
+    appStoreUrl: "https://apps.apple.com/jp/app/task-space-%E6%AC%A1%E3%81%AB%E3%82%84%E3%82%8B%E3%82%BF%E3%82%B9%E3%82%AF%E7%AE%A1%E7%90%86/id6757950675",
+  },
+  {
+    name: "Meal Note",
+    description: "食事をシンプルに記録できるアプリ",
+    appStoreUrl: "https://apps.apple.com/jp/app/meal-note-%E9%A3%9F%E4%BA%8B%E8%A8%98%E9%8C%B2/id6757949618",
+  },
+  {
+    name: "Sleep Note",
+    description: "睡眠をシンプルに記録できるアプリ",
+    appStoreUrl: "https://apps.apple.com/jp/app/sleep-note/id6758096161",
+  },
+  {
+    name: "Money Note",
+    description: "シンプルな家計簿アプリ",
+    appStoreUrl: "https://apps.apple.com/jp/app/money-note-%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E5%AE%B6%E8%A8%88%E7%B0%BF/id6758237102",
+  },
+];
+
 const skills = [
   { group: "Frontend", items: ["HTML", "CSS", "JavaScript", "React"] },
   { group: "Backend", items: ["Node.js (basic)"] },
@@ -106,6 +134,23 @@ const skills = [
             ここに自己紹介を書きます（例：何が得意か、どんな領域に興味があるか、仕事/学習のスタイルなど）。
             3〜6行くらいで読みやすくまとめるのがコツです。
           </p>
+        </div>
+      </section>
+
+      <section id="apps">
+        <h2>Apps</h2>
+        <div class="grid">
+          {apps.map((app) => (
+            <article class="card">
+              <h3>{app.name}</h3>
+              <p>{app.description}</p>
+              <div class="links">
+                <a href={app.appStoreUrl} target="_blank" rel="noreferrer">
+                  App Store
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
