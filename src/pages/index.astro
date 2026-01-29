@@ -14,29 +14,16 @@ const profile = {
   },
 };
 
-const works = [
-  {
-    title: "Project A",
-    description: "◯◯を解決するためのWebアプリ。",
-    tech: ["Astro", "TypeScript", "CSS"],
-    demo: "https://example.com",
-    repo: "https://github.com/kaneken555/project-a",
-  },
-  {
-    title: "Project B",
-    description: "学習用に作った◯◯。",
-    tech: ["React", "Vite"],
-    demo: "",
-    repo: "https://github.com/kaneken555/project-b",
-  },
-  {
-    title: "Project C",
-    description: "API連携のサンプル。",
-    tech: ["JavaScript", "API"],
-    demo: "",
-    repo: "https://github.com/kaneken555/project-c",
-  },
-];
+// ブログ追加時に復活予定
+// const works = [
+//   {
+//     title: "Project A",
+//     description: "◯◯を解決するためのWebアプリ。",
+//     tech: ["Astro", "TypeScript", "CSS"],
+//     demo: "https://example.com",
+//     repo: "https://github.com/kaneken555/project-a",
+//   },
+// ];
 
 const apps = [
   {
@@ -154,6 +141,7 @@ const skills = [
         </div>
       </section>
 
+      <!-- ブログ追加時に復活予定
       <section id="works">
         <h2>Works</h2>
         <div class="grid">
@@ -161,11 +149,9 @@ const skills = [
             <article class="card">
               <h3>{w.title}</h3>
               <p>{w.description}</p>
-
               <div class="chips">
                 {w.tech.map((t) => <span class="chip">{t}</span>)}
               </div>
-
               <div class="links">
                 {w.demo ? <a href={w.demo} target="_blank" rel="noreferrer">Demo</a> : null}
                 <a href={w.repo} target="_blank" rel="noreferrer">GitHub</a>
@@ -173,10 +159,8 @@ const skills = [
             </article>
           ))}
         </div>
-        <p class="muted" style="margin-top:10px;">
-          作品が増えたら、/works の一覧ページと詳細ページを追加して整理できます。
-        </p>
       </section>
+      -->
 
       <section id="skills">
         <h2>Skills</h2>
