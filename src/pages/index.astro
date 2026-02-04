@@ -50,6 +50,7 @@ const apps = [
     name: "Money Note",
     description: "シンプルな家計簿アプリ",
     appStoreUrl: "https://apps.apple.com/jp/app/money-note-%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E5%AE%B6%E8%A8%88%E7%B0%BF/id6758237102",
+    detailUrl: "/apps/money-note",
   },
 ];
 
@@ -140,6 +141,9 @@ const skills = [
                 <a href={app.appStoreUrl} target="_blank" rel="noreferrer">
                   App Store
                 </a>
+                {app.detailUrl && (
+                  <a href={app.detailUrl}>詳しく見る</a>
+                )}
               </div>
             </article>
           ))}
