@@ -15,6 +15,7 @@ const { name } = Astro.props;
       <!-- <a href="#works">Works</a> -->
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
+      <a href="https://kanekenlab.com/" target="_blank" rel="noreferrer" class="external">kanekenlab.com</a>
     </nav>
   </div>
 </header>
@@ -55,5 +56,14 @@ const { name } = Astro.props;
   }
   nav a:hover {
     border-color: #ccc;
+  }
+  nav a.external {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+  }
+  nav a.external:hover {
+    background: #444;
+    border-color: #444;
   }
 </style>
