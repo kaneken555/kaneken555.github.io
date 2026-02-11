@@ -1,0 +1,323 @@
+---
+const appName = "Meal Note - シンプル食事記録";
+const tagline = "食事記録で食生活を見える化";
+const description = "Meal Noteは、毎日の食事を簡単に記録できるシンプルな食事記録アプリです。分析機能で食生活の傾向がひと目でわかり、自炊・外食のバランスも把握できます。";
+const siteUrl = "https://kaneken555.github.io";
+const pageUrl = `${siteUrl}/apps/meal-note-2nd`;
+const ogImage = `${siteUrl}/images/apps/meal-note-2nd/icon.png`;
+const appStoreUrl = "https://apps.apple.com/jp/app/meal-note-%E3%82%B7%E3%83%B3%E3%83%97%E3%83%AB%E9%A3%9F%E4%BA%8B%E8%A8%98%E9%8C%B2/id6758766219";
+
+const screenshots = [
+  { src: "/images/apps/meal-note-2nd/01-home.png", alt: "ホーム画面（今日のサマリー）" },
+  { src: "/images/apps/meal-note-2nd/02-add-meal.png", alt: "食事登録画面" },
+  { src: "/images/apps/meal-note-2nd/03-meals.png", alt: "食事一覧画面" },
+  { src: "/images/apps/meal-note-2nd/04-analysis.png", alt: "分析トップ画面" },
+  { src: "/images/apps/meal-note-2nd/05-detail-analysis.png", alt: "個別分析画面" },
+];
+
+const features = [
+  { icon: "🍽️", title: "かんたん記録", text: "料理名を選ぶだけでサッと記録" },
+  { icon: "🕐", title: "タイミング管理", text: "朝/昼/夜/間食のタイミングで分類" },
+  { icon: "🏠", title: "タイプ分類", text: "自炊・外食・中食のバランスを把握" },
+  { icon: "📊", title: "食事分析", text: "ジャンル・タグ・時系列で食生活を分析" },
+  { icon: "📋", title: "一覧・フィルタ", text: "月別の食事一覧とフィルタ機能" },
+  { icon: "🔒", title: "オフライン対応", text: "ログイン不要、データは端末に保存" },
+];
+
+const targets = [
+  "食事の記録を手軽にしたい方",
+  "食生活の偏りを把握したい方",
+  "自炊・外食のバランスを見直したい方",
+  "シンプルな食事管理アプリを探している方",
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: appName,
+  description,
+  operatingSystem: "iOS",
+  applicationCategory: "HealthApplication",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "JPY",
+  },
+  url: pageUrl,
+  image: ogImage,
+};
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{appName} - {tagline}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+
+    <meta property="og:title" content={`${appName} - ${tagline}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={`${appName} - ${tagline}`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <style is:global>
+      html { scroll-behavior: smooth; }
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #333; }
+      a { color: inherit; }
+    </style>
+    <style>
+      .wrap {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 0 16px 64px;
+      }
+
+      /* ── Hero ── */
+      .hero {
+        text-align: center;
+        padding: 48px 0 32px;
+      }
+      .hero-icon {
+        width: 120px;
+        height: 120px;
+        border-radius: 24px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      }
+      .hero h1 {
+        font-size: 32px;
+        margin: 20px 0 8px;
+      }
+      .hero .tagline {
+        font-size: 16px;
+        color: #444;
+        margin: 0 0 24px;
+        line-height: 1.7;
+      }
+      .store-badge {
+        display: inline-block;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 12px 24px;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        transition: border-color 0.2s;
+      }
+      .store-badge:hover {
+        border-color: #ccc;
+      }
+
+      /* ── Screenshots ── */
+      .screenshots {
+        padding: 24px 0;
+      }
+      .screenshots h2 {
+        font-size: 22px;
+        margin: 0 0 16px;
+      }
+      .screenshot-scroll {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+      }
+      .screenshot-scroll::-webkit-scrollbar {
+        height: 6px;
+      }
+      .screenshot-scroll::-webkit-scrollbar-thumb {
+        background: #ddd;
+        border-radius: 3px;
+      }
+      .screenshot-scroll img {
+        width: 200px;
+        height: auto;
+        flex-shrink: 0;
+        border-radius: 16px;
+        border: 1px solid #eee;
+        scroll-snap-align: start;
+      }
+      @media (max-width: 480px) {
+        .screenshot-scroll img {
+          width: 160px;
+        }
+      }
+
+      /* ── Sections ── */
+      .section {
+        padding: 24px 0;
+      }
+      .section h2 {
+        font-size: 22px;
+        margin: 0 0 12px;
+      }
+
+      .about-text {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #444;
+        margin: 0;
+      }
+
+      /* ── Features ── */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      @media (max-width: 480px) {
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .feature-card {
+        border: 1px solid #eee;
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .feature-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+      .feature-card h3 {
+        font-size: 15px;
+        margin: 0 0 4px;
+      }
+      .feature-card p {
+        font-size: 13px;
+        color: #666;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* ── Targets ── */
+      .target-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .target-list li {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #444;
+        padding: 6px 0;
+        border-bottom: 1px solid #eee;
+      }
+      .target-list li:last-child {
+        border-bottom: none;
+      }
+      .target-list li::before {
+        content: "✓ ";
+        color: #666;
+      }
+
+      /* ── CTA ── */
+      .cta {
+        text-align: center;
+        padding: 40px 0;
+      }
+      .cta p {
+        font-size: 15px;
+        color: #444;
+        margin: 0 0 16px;
+      }
+
+      /* ── Footer ── */
+      .lp-footer {
+        text-align: center;
+        padding-top: 16px;
+        border-top: 1px solid #eee;
+        color: #666;
+        font-size: 13px;
+      }
+      .lp-footer a {
+        text-decoration: none;
+      }
+      .lp-footer a:hover {
+        text-decoration: underline;
+      }
+      .lp-footer .back-link {
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="wrap">
+      <!-- Hero -->
+      <div class="hero">
+        <img class="hero-icon" src="/images/apps/meal-note-2nd/icon.png" alt={`${appName} アイコン`} width="120" height="120" />
+        <h1>{appName}</h1>
+        <p class="tagline">{tagline}</p>
+        <a class="store-badge" href={appStoreUrl} target="_blank" rel="noreferrer">
+          App Store からダウンロード
+        </a>
+      </div>
+
+      <!-- Screenshots -->
+      <section class="screenshots">
+        <h2>スクリーンショット</h2>
+        <div class="screenshot-scroll">
+          {screenshots.map((s) => (
+            <img src={s.src} alt={s.alt} width="1320" height="2868" loading="lazy" />
+          ))}
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section">
+        <h2>アプリ概要</h2>
+        <p class="about-text">{description}</p>
+      </section>
+
+      <!-- Features -->
+      <section class="section">
+        <h2>主な機能</h2>
+        <div class="features-grid">
+          {features.map((f) => (
+            <div class="feature-card">
+              <div class="feature-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Targets -->
+      <section class="section">
+        <h2>こんな方におすすめ</h2>
+        <ul class="target-list">
+          {targets.map((t) => (
+            <li>{t}</li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta">
+        <p>無料でお試しいただけます</p>
+        <a class="store-badge" href={appStoreUrl} target="_blank" rel="noreferrer">
+          App Store からダウンロード
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer class="lp-footer">
+        <a class="back-link" href="/">kaneken555 Portfolio に戻る</a>
+        <p>&copy; {new Date().getFullYear()} kaneken555. Built with Astro.</p>
+      </footer>
+    </main>
+  </body>
+</html>
